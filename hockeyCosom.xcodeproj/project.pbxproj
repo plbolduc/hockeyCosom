@@ -15,6 +15,7 @@
 		17B5FF891D94150200A8213F /* hockeyCosomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B5FF881D94150200A8213F /* hockeyCosomTests.swift */; };
 		17B5FF941D94150200A8213F /* hockeyCosomUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B5FF931D94150200A8213F /* hockeyCosomUITests.swift */; };
 		8716DCEF1D942B5B00A37F48 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8716DCEE1D942B5B00A37F48 /* Match.swift */; };
+		8716DCF11D942C6700A37F48 /* Joueur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8716DCF01D942C6700A37F48 /* Joueur.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		17B5FF931D94150200A8213F /* hockeyCosomUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hockeyCosomUITests.swift; sourceTree = "<group>"; };
 		17B5FF951D94150200A8213F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8716DCEE1D942B5B00A37F48 /* Match.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
+		8716DCF01D942C6700A37F48 /* Joueur.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Joueur.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		17B5FF721D94150200A8213F /* hockeyCosom */ = {
 			isa = PBXGroup;
 			children = (
+				8716DCF01D942C6700A37F48 /* Joueur.swift */,
 				8716DCEE1D942B5B00A37F48 /* Match.swift */,
 				17B5FF731D94150200A8213F /* AppDelegate.swift */,
 				17B5FF751D94150200A8213F /* ViewController.swift */,
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17B5FF761D94150200A8213F /* ViewController.swift in Sources */,
+				8716DCF11D942C6700A37F48 /* Joueur.swift in Sources */,
 				17B5FF741D94150200A8213F /* AppDelegate.swift in Sources */,
 				8716DCEF1D942B5B00A37F48 /* Match.swift in Sources */,
 			);
