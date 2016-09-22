@@ -484,6 +484,7 @@
 				17B5FF9A1D94150200A8213F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		17B5FF9B1D94150200A8213F /* Build configuration list for PBXNativeTarget "hockeyCosomTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +493,7 @@
 				17B5FF9D1D94150200A8213F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		17B5FF9E1D94150200A8213F /* Build configuration list for PBXNativeTarget "hockeyCosomUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +502,7 @@
 				17B5FFA01D94150200A8213F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
