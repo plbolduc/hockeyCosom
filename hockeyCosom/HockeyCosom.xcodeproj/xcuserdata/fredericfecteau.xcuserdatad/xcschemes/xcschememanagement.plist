@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>hockeyCosom.xcscheme</key>
+		<key>HockeyCosom.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,17 +12,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>170977D61D935EDA006B44AC</key>
+		<key>87A3F9431D94137900E31C76</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>170977EF1D935EDA006B44AC</key>
+		<key>87A3F9571D94137900E31C76</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>170977FA1D935EDA006B44AC</key>
+		<key>87A3F9621D94137900E31C76</key>
 		<dict>
 			<key>primary</key>
 			<true/>
