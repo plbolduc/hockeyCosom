@@ -10,15 +10,20 @@ import Foundation
 
 class Match{
 
-    var Equipe = [String]();
+    var Equipe1 = [Joueur]();
+    var Equipe2 = [Joueur]();
     
     init ()
     {
         
     }
     
-    func AddPlayer(joueur : String) {
-        
+    func AddPlayerEquipe1(joueur : Joueur) {
+        Equipe1.append(joueur)
+    }
+    
+    func AddPlayerEquipe2(joueur : Joueur) {
+        Equipe2.append(joueur)
     }
     
 }
