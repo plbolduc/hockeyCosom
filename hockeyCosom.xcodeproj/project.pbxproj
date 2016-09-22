@@ -14,6 +14,7 @@
 		17B5FF7E1D94150200A8213F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17B5FF7C1D94150200A8213F /* LaunchScreen.storyboard */; };
 		17B5FF891D94150200A8213F /* hockeyCosomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B5FF881D94150200A8213F /* hockeyCosomTests.swift */; };
 		17B5FF941D94150200A8213F /* hockeyCosomUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B5FF931D94150200A8213F /* hockeyCosomUITests.swift */; };
+		8716DCEF1D942B5B00A37F48 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8716DCEE1D942B5B00A37F48 /* Match.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		17B5FF8F1D94150200A8213F /* hockeyCosomUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hockeyCosomUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		17B5FF931D94150200A8213F /* hockeyCosomUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hockeyCosomUITests.swift; sourceTree = "<group>"; };
 		17B5FF951D94150200A8213F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8716DCEE1D942B5B00A37F48 /* Match.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		17B5FF721D94150200A8213F /* hockeyCosom */ = {
 			isa = PBXGroup;
 			children = (
+				8716DCEE1D942B5B00A37F48 /* Match.swift */,
 				17B5FF731D94150200A8213F /* AppDelegate.swift */,
 				17B5FF751D94150200A8213F /* ViewController.swift */,
 				17B5FF771D94150200A8213F /* Main.storyboard */,
@@ -258,6 +261,7 @@
 			files = (
 				17B5FF761D94150200A8213F /* ViewController.swift in Sources */,
 				17B5FF741D94150200A8213F /* AppDelegate.swift in Sources */,
+				8716DCEF1D942B5B00A37F48 /* Match.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
