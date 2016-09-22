@@ -319,7 +319,11 @@
                                 <rect key="frame" x="872" y="718" width="144" height="30"/>
                                 <state key="normal" title="Commencer la partie"/>
                                 <connections>
+<<<<<<< HEAD
                                     <action selector="StartGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KD7-SO-0NR"/>
+=======
+                                    <action selector="startGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Le-r2-Zr0"/>
+>>>>>>> cabd890edc93b187a0f6aa72b5b0ccdbd4ceabeb
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gb4-nm-tSE">
@@ -330,6 +334,19 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="E1" destination="w9K-Rn-OI5" id="QI5-k4-N2W"/>
+                        <outlet property="E2" destination="ql7-9D-reb" id="EhG-1p-lfZ"/>
+                        <outlet property="N1E1" destination="i5d-OV-w4y" id="gYh-qo-UVX"/>
+                        <outlet property="N1E2" destination="XfQ-Aa-1Dv" id="Egw-E6-UKQ"/>
+                        <outlet property="N2E1" destination="90v-cP-Q7E" id="gvd-hU-4W9"/>
+                        <outlet property="N3E1" destination="gcY-Y8-hhC" id="SZ1-Bb-QPH"/>
+                        <outlet property="N3E2" destination="Xo8-aK-Nqi" id="vge-1y-rBf"/>
+                        <outlet property="N4E1" destination="Fbt-4n-Nx5" id="fk1-Kd-ZAD"/>
+                        <outlet property="N4E2" destination="tKa-0V-GIz" id="nP1-y0-ui6"/>
+                        <outlet property="N5E1" destination="1LC-Ab-2g6" id="Fze-oe-Vzu"/>
+                        <outlet property="N5E2" destination="bNJ-wX-546" id="kic-sw-xfj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

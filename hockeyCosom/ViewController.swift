@@ -9,6 +9,18 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var N1E1: UITextField!
+    @IBOutlet weak var N2E1: UITextField!
+    @IBOutlet weak var N3E1: UITextField!
+    @IBOutlet weak var N4E1: UITextField!
+    @IBOutlet weak var N5E1: UITextField!
+    @IBOutlet weak var N1E2: UITextField!
+    @IBOutlet weak var N2E2: UITextField!
+    @IBOutlet weak var N3E2: UITextField!
+    @IBOutlet weak var N4E2: UITextField!
+    @IBOutlet weak var N5E2: UITextField!
+    @IBOutlet weak var E1: UITextField!
+    @IBOutlet weak var E2: UITextField!
 
         @IBOutlet weak var J1E1: UITextField!
         @IBOutlet weak var J2E1: UITextField!
@@ -31,11 +43,14 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+<<<<<<< HEAD
 
     @IBAction func StartGame(sender: UIButton) {
 //        let match:Match=Match()
 //        match.AddPlayerEquipe1(J1E1.text : String, numeroJoueur: <#T##Int#>)
     }
 
+=======
+>>>>>>> cabd890edc93b187a0f6aa72b5b0ccdbd4ceabeb
 }
 
