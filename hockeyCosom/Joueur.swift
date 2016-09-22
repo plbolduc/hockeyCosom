@@ -9,10 +9,12 @@
 import Foundation
 
 class Joueur {
-    var nomJoueur: String;
+    var nom: String;
+    var numero: Int;
     
-    init(nomJoueur: String){
-        self.nomJoueur = nomJoueur
+    init(nom: String, numero: Int){
+        self.nom = nom
+        self.numero = numero
     }
     
 }
