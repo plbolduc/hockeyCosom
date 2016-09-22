@@ -9,8 +9,6 @@
 import Foundation
 
 class Goal{
-    
-    init(){
-    
-    }
+init()
+{}
 }
