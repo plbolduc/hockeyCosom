@@ -10,9 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var stepper: UIStepper!
+    @IBOutlet var periode: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        stepper.maximumValue = 3
+        stepper.minimumValue = 1
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +23,9 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func changePeriode(sender: UIStepper) {
+        self.periode.text = Int(sender.value).description
+    }
 
 }
 
