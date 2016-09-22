@@ -317,6 +317,7 @@
                                 <rect key="frame" x="872" y="718" width="144" height="30"/>
                                 <state key="normal" title="Commencer la partie"/>
                                 <connections>
+                                    <action selector="StartGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JEB-fn-AHT"/>
                                     <action selector="startGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Le-r2-Zr0"/>
                                 </connections>
                             </button>

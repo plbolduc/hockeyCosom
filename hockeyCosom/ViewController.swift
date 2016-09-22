@@ -40,5 +40,9 @@ class ViewController: UIViewController {
         self.periode.text = Int(sender.value).description
     }
 
+    @IBAction func StartGame(sender: AnyObject) {
+        //let match:Match=Match()
+        //        //match.AddPlayerEquipe1(J1E1 : String, numeroJoueur: <#T##Int#>)
+    }
 }
 
