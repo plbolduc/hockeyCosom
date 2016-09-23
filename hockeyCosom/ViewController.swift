@@ -59,7 +59,7 @@ class ViewController: UIViewController {
         let team2Numbers:[UITextField] = [N1E2, N2E2, N3E2, N4E2, N5E2];
         
         if(createGame(team1Players, teamNumbers: team1Numbers) && createGame(team2Players, teamNumbers: team2Numbers)){
-            
+            stepper.enabled = true;
         }else{
             let alert = UIAlertController(title: "Erreur", message: "Vous devez remplir tous les champs!", preferredStyle: UIAlertControllerStyle.Alert);
             alert.addAction(UIAlertAction(title: "Fermer", style: UIAlertActionStyle.Default, handler: nil));
