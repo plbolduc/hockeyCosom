@@ -9,6 +9,11 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var btnBut: UIButton!
+    @IBOutlet weak var btnPasse: UIButton!
+    @IBOutlet weak var btnConfirmer: UIButton!
+    
+    
     @IBOutlet weak var E1: UITextField!
     @IBOutlet weak var E2: UITextField!
 
@@ -60,6 +65,10 @@ class ViewController: UIViewController {
         
         if(createGame(team1Players, teamNumbers: team1Numbers) && createGame(team2Players, teamNumbers: team2Numbers)){
             stepper.enabled = true;
+            btnBut.enabled = true;
+            btnPasse.enabled = true;
+            btnConfirmer.enabled = true;
+
         }else{
             let alert = UIAlertController(title: "Erreur", message: "Vous devez remplir tous les champs!", preferredStyle: UIAlertControllerStyle.Alert);
             alert.addAction(UIAlertAction(title: "Fermer", style: UIAlertActionStyle.Default, handler: nil));

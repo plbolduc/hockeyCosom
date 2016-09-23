@@ -334,6 +334,8 @@
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
+                        <outlet property="BUT" destination="qfu-5O-P6d" id="8Ye-jD-qwU"/>
+                        <outlet property="Confirmer" destination="mwX-Ju-SyV" id="0ol-uB-u5E"/>
                         <outlet property="E1" destination="w9K-Rn-OI5" id="xT9-gP-XDO"/>
                         <outlet property="E2" destination="ql7-9D-reb" id="yoq-Qa-TjI"/>
                         <outlet property="J1E1" destination="glc-mT-MvZ" id="aTs-7r-yat"/>
@@ -356,6 +358,10 @@
                         <outlet property="N4E2" destination="PL5-E9-lL4" id="5c2-33-yz1"/>
                         <outlet property="N5E1" destination="1LC-Ab-2g6" id="Qtk-HT-SFk"/>
                         <outlet property="N5E2" destination="j9n-0H-C1t" id="6Yf-4H-3A5"/>
+                        <outlet property="PASSE" destination="Um4-FH-Ngo" id="KKv-hF-z7s"/>
+                        <outlet property="btnBut" destination="qfu-5O-P6d" id="l9o-kd-qx0"/>
+                        <outlet property="btnConfirmer" destination="mwX-Ju-SyV" id="KRj-qC-hU4"/>
+                        <outlet property="btnPasse" destination="Um4-FH-Ngo" id="Bsc-NK-Onh"/>
                         <outlet property="periode" destination="U19-FI-Jr1" id="px1-9t-An2"/>
                         <outlet property="stepper" destination="KFf-f6-vxd" id="Hto-YA-nYc"/>
                     </connections>
