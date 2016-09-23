@@ -42,6 +42,9 @@ class ViewController: UIViewController {
 
     @IBOutlet var stepper: UIStepper!
     @IBOutlet var periode: UITextField!
+    
+    var match = Match()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         stepper.maximumValue = 3
@@ -58,12 +61,13 @@ class ViewController: UIViewController {
     }
     
     @IBAction func startGame(sender: UIButton) {
+        match = Match()
         let team1Players:[UITextField] = [J1E1, J2E1, J3E1, J4E1, J5E1];
         let team1Numbers:[UITextField] = [N1E1, N2E1, N3E1, N4E1, N5E1];
         let team2Players:[UITextField] = [J1E2, J2E2, J3E2, J4E2, J5E2];
         let team2Numbers:[UITextField] = [N1E2, N2E2, N3E2, N4E2, N5E2];
         
-        if(createGame(team1Players, teamNumbers: team1Numbers) && createGame(team2Players, teamNumbers: team2Numbers)){
+        if(createGame(team1Players, teamNumbers: team1Numbers,team: 1) && createGame(team2Players, teamNumbers: team2Numbers,team : 2)){
             stepper.enabled = true;
             btnBut.enabled = true;
             btnPasse.enabled = true;
@@ -76,12 +80,18 @@ class ViewController: UIViewController {
         }
     }
     
-    func createGame(teamPlayers:[UITextField], teamNumbers:[UITextField]) -> Bool {
+    func createGame(teamPlayers:[UITextField], teamNumbers:[UITextField], team : Int) -> Bool {
         var validInputs = true;
         var indexJoueur = 0;
         for player in teamPlayers {
             if(!player.hasText() && !teamNumbers[indexJoueur].hasText()){
                 validInputs = false;
+            }
+            
+            if(validInputs)
+            {
+                let teamNumber = Int(teamNumbers[indexJoueur].text!)
+                match.AddPlayer(player.text!, numeroJoueur : teamNumber!,equipe: team)
             }
             indexJoueur += 1;
         }

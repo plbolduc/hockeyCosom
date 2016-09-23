@@ -18,15 +18,16 @@ class Match{
         
     }
     
-    func AddPlayerEquipe1(nomJoueur : String, numeroJoueur: Int) {
+    func AddPlayer(nomJoueur : String, numeroJoueur: Int,equipe: Int) {
         let joueur:Joueur=Joueur(nom : nomJoueur, numero: numeroJoueur)
-        Equipe1.append(joueur)
+        if(equipe==1)
+        {
+            Equipe1.append(joueur)
+        }
+        if(equipe==2)
+        {
+            Equipe2.append(joueur)
+        }
     }
-    
-    func AddPlayerEquipe2(nomJoueur : String, numeroJoueur: Int) {
-        let joueur:Joueur=Joueur(nom : nomJoueur, numero: numeroJoueur)
-        Equipe2.append(joueur)
-    }
-    
 }
 

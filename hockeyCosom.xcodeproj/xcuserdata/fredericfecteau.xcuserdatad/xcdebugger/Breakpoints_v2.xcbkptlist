@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "hockeyCosom/Match.swift"
-            timestampString = "496250709.016043"
+            filePath = "hockeyCosom/ViewController.swift"
+            timestampString = "496293950.942608"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "AddPlayerEquipe1(_:numeroJoueur:)"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "startGame(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
