@@ -284,15 +284,11 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qfu-5O-P6d">
-                                <rect key="frame" x="497" y="190" width="30" height="30"/>
-                                <state key="normal" title="But"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Um4-FH-Ngo">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Um4-FH-Ngo">
                                 <rect key="frame" x="492" y="240" width="41" height="30"/>
                                 <state key="normal" title="Passe"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mwX-Ju-SyV">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mwX-Ju-SyV">
                                 <rect key="frame" x="478" y="291" width="69" height="30"/>
                                 <state key="normal" title="Confirmer"/>
                             </button>
@@ -307,7 +303,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" spellCheckingType="no"/>
                             </textField>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="KFf-f6-vxd">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="KFf-f6-vxd">
                                 <rect key="frame" x="545" y="91" width="94" height="29"/>
                                 <connections>
                                     <action selector="changePeriode:" destination="BYZ-38-t0r" eventType="valueChanged" id="dpr-GZ-Xc7"/>
@@ -317,8 +313,7 @@
                                 <rect key="frame" x="872" y="718" width="144" height="30"/>
                                 <state key="normal" title="Commencer la partie"/>
                                 <connections>
-                                    <action selector="StartGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JEB-fn-AHT"/>
-                                    <action selector="startGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Le-r2-Zr0"/>
+                                    <action selector="startGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CBP-a4-PK1"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gb4-nm-tSE">
@@ -326,15 +321,41 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ql7-9D-reb">
-                                <rect key="frame" x="627" y="20" width="247" height="30"/>
+                                <rect key="frame" x="627" y="19" width="247" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qfu-5O-P6d">
+                                <rect key="frame" x="497" y="190" width="30" height="30"/>
+                                <state key="normal" title="But"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
+                        <outlet property="E1" destination="w9K-Rn-OI5" id="xT9-gP-XDO"/>
+                        <outlet property="E2" destination="ql7-9D-reb" id="yoq-Qa-TjI"/>
+                        <outlet property="J1E1" destination="glc-mT-MvZ" id="aTs-7r-yat"/>
+                        <outlet property="J1E2" destination="XfQ-Aa-1Dv" id="rqN-MX-bMy"/>
+                        <outlet property="J2E1" destination="tz1-NC-VYU" id="wAc-XN-riz"/>
+                        <outlet property="J2E2" destination="x5I-tP-fIv" id="DRX-iD-twb"/>
+                        <outlet property="J3E1" destination="xFb-pf-Eq7" id="fpF-JL-Oav"/>
+                        <outlet property="J3E2" destination="Xo8-aK-Nqi" id="sa8-se-QNR"/>
+                        <outlet property="J4E1" destination="Xtd-lQ-aHA" id="Ofy-sa-Bei"/>
+                        <outlet property="J4E2" destination="tKa-0V-GIz" id="Fdj-e9-7F0"/>
+                        <outlet property="J5E1" destination="ja3-4e-1Yk" id="7yb-l2-WMC"/>
+                        <outlet property="J5E2" destination="bNJ-wX-546" id="c8s-xs-7cb"/>
+                        <outlet property="N1E1" destination="i5d-OV-w4y" id="W1V-V3-aBl"/>
+                        <outlet property="N1E2" destination="PQf-65-P67" id="R22-fi-xvY"/>
+                        <outlet property="N2E1" destination="90v-cP-Q7E" id="LYO-Dk-sWn"/>
+                        <outlet property="N2E2" destination="TF2-gs-iXl" id="B3U-qF-B3Y"/>
+                        <outlet property="N3E1" destination="gcY-Y8-hhC" id="3vZ-Ou-ma5"/>
+                        <outlet property="N3E2" destination="4FE-EE-raI" id="lda-VQ-Ggv"/>
+                        <outlet property="N4E1" destination="Fbt-4n-Nx5" id="YzA-jh-uuc"/>
+                        <outlet property="N4E2" destination="PL5-E9-lL4" id="5c2-33-yz1"/>
+                        <outlet property="N5E1" destination="1LC-Ab-2g6" id="Qtk-HT-SFk"/>
+                        <outlet property="N5E2" destination="j9n-0H-C1t" id="6Yf-4H-3A5"/>
                         <outlet property="periode" destination="U19-FI-Jr1" id="px1-9t-An2"/>
                         <outlet property="stepper" destination="KFf-f6-vxd" id="Hto-YA-nYc"/>
                     </connections>
