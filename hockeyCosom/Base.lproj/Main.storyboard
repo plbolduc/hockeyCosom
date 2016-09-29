@@ -355,6 +355,7 @@
                     <connections>
                         <outlet property="E1" destination="w9K-Rn-OI5" id="xT9-gP-XDO"/>
                         <outlet property="E2" destination="ql7-9D-reb" id="yoq-Qa-TjI"/>
+                        <outlet property="GameTimerTimeText" destination="Rlb-at-rtB" id="gIA-kT-7ii"/>
                         <outlet property="J1E1" destination="glc-mT-MvZ" id="aTs-7r-yat"/>
                         <outlet property="J1E2" destination="XfQ-Aa-1Dv" id="rqN-MX-bMy"/>
                         <outlet property="J2E1" destination="tz1-NC-VYU" id="wAc-XN-riz"/>

@@ -43,8 +43,10 @@ class ViewController: UIViewController {
 
     @IBOutlet var stepper: UIStepper!
     @IBOutlet var periode: UITextField!
+  
+    var gameTimerCounte = 0;
     var gameTimeMode = false; //true = time is running  false = time is not runningß
-   
+    @IBOutlet weak var GameTimerTimeText: UILabel!
     @IBOutlet weak var timerOnOffText: UIButton!
     @IBAction func TimerOnOffEvent(sender: UIButton) {
   
@@ -58,6 +60,7 @@ class ViewController: UIViewController {
         
     }
 
+    
     var match = Match()
     var gameMode = 1; //1 = start game; 2 = stop game
     
