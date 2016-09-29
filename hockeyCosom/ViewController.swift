@@ -43,8 +43,13 @@ class ViewController: UIViewController {
 
     @IBOutlet var stepper: UIStepper!
     @IBOutlet var periode: UITextField!
-  
-    var gameTimerCounte = 0;
+    
+    @IBOutlet weak var actionGameText: UITextView!
+    
+    let section = ["pizza","poutine"]
+    let item = [["Margarita","BBQ Chicken", "Pepperoni"],["frite","fromage"]]
+    
+    
     var gameTimeMode = false; //true = time is running  false = time is not runningß
     @IBOutlet weak var GameTimerTimeText: UILabel!
     @IBOutlet weak var timerOnOffText: UIButton!
@@ -164,6 +169,10 @@ class ViewController: UIViewController {
         self.periode.text = Int(sender.value).description
     }
     
+    @IBAction func fredTouch(sender: UIButton) {
+        //addActionGamePlay()
+    }
+    @IBOutlet weak var boutonFred: UIButton!
     @IBAction func startGame(sender: UIButton) {
         
         //start the game
@@ -222,5 +231,10 @@ class ViewController: UIViewController {
         }
         return validInputs
     }
+    
+    /*func addActionGamePlay(periode : Int, team : Int, buteur : String, passeurs : [String] ) {
+        print("TITI")
+        actionGameText.text = actionGameText.text + "But de " + team
+    }*/
 }
 

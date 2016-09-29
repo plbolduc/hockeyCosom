@@ -323,10 +323,6 @@
                                     <action selector="startGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CBP-a4-PK1"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gb4-nm-tSE">
-                                <rect key="frame" x="206" y="382" width="612" height="291"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ql7-9D-reb">
                                 <rect key="frame" x="627" y="19" width="247" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -359,9 +355,23 @@
                                     <action selector="TimerOnOffEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mat-aR-P8N"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iqQ-pp-B5G">
+                                <rect key="frame" x="49" y="399" width="46" height="30"/>
+                                <state key="normal" title="Fred"/>
+                                <connections>
+                                    <action selector="fredTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lhC-dS-gmD"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SFb-Af-Lfj">
+                                <rect key="frame" x="242" y="475" width="442" height="208"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="S3a-jJ-iPd"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="E1" destination="w9K-Rn-OI5" id="xT9-gP-XDO"/>
@@ -397,6 +407,8 @@
                         <outlet property="N4E2" destination="PL5-E9-lL4" id="5c2-33-yz1"/>
                         <outlet property="N5E1" destination="1LC-Ab-2g6" id="Qtk-HT-SFk"/>
                         <outlet property="N5E2" destination="j9n-0H-C1t" id="6Yf-4H-3A5"/>
+                        <outlet property="actionGameText" destination="SFb-Af-Lfj" id="Nl5-mF-x0T"/>
+                        <outlet property="boutonFred" destination="iqQ-pp-B5G" id="p3j-dG-6NH"/>
                         <outlet property="btnBut" destination="qfu-5O-P6d" id="l9o-kd-qx0"/>
                         <outlet property="btnConfirmer" destination="mwX-Ju-SyV" id="KRj-qC-hU4"/>
                         <outlet property="btnPasse" destination="Um4-FH-Ngo" id="Bsc-NK-Onh"/>
@@ -408,7 +420,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="573" y="576"/>
+            <point key="canvasLocation" x="1553" y="576"/>
         </scene>
     </scenes>
 </document>
