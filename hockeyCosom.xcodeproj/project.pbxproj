@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		15D4FB941D942BE800ECCE5F /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D4FB931D942BE800ECCE5F /* Goal.swift */; };
 		17B5FF741D94150200A8213F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B5FF731D94150200A8213F /* AppDelegate.swift */; };
 		17B5FF761D94150200A8213F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B5FF751D94150200A8213F /* ViewController.swift */; };
 		17B5FF791D94150200A8213F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17B5FF771D94150200A8213F /* Main.storyboard */; };
@@ -38,7 +37,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		15D4FB931D942BE800ECCE5F /* Goal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
 		17B5FF701D94150200A8213F /* hockeyCosom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hockeyCosom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17B5FF731D94150200A8213F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17B5FF751D94150200A8213F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -113,7 +111,6 @@
 				17B5FF7A1D94150200A8213F /* Assets.xcassets */,
 				17B5FF7C1D94150200A8213F /* LaunchScreen.storyboard */,
 				17B5FF7F1D94150200A8213F /* Info.plist */,
-				15D4FB931D942BE800ECCE5F /* Goal.swift */,
 				8789274D1D9D5B0300C10539 /* Stars.swift */,
 			);
 			path = hockeyCosom;
@@ -268,7 +265,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				15D4FB941D942BE800ECCE5F /* Goal.swift in Sources */,
 				17B5FF761D94150200A8213F /* ViewController.swift in Sources */,
 				8716DCF11D942C6700A37F48 /* Joueur.swift in Sources */,
 				17B5FF741D94150200A8213F /* AppDelegate.swift in Sources */,
