@@ -111,7 +111,7 @@ class ViewController: UIViewController {
             if(validInputs)
             {
                 let teamNumber = Int(teamNumbers[indexJoueur].text!)
-                match.AddPlayer(player.text!, numeroJoueur : teamNumber!,equipe: team)
+                match.AddPlayer(player.text!, numeroJoueur : teamNumber!,numeroEquipe: team)
             }
             indexJoueur += 1;
         }
