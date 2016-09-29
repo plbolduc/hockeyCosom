@@ -359,6 +359,7 @@
                         <outlet property="btnBut" destination="qfu-5O-P6d" id="l9o-kd-qx0"/>
                         <outlet property="btnConfirmer" destination="mwX-Ju-SyV" id="KRj-qC-hU4"/>
                         <outlet property="btnPasse" destination="Um4-FH-Ngo" id="Bsc-NK-Onh"/>
+                        <outlet property="btnStopStartGame" destination="ixf-2S-Amw" id="xr1-eu-9no"/>
                         <outlet property="periode" destination="U19-FI-Jr1" id="px1-9t-An2"/>
                         <outlet property="stepper" destination="KFf-f6-vxd" id="Hto-YA-nYc"/>
                     </connections>

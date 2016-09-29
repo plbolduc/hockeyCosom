@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var btnBut: UIButton!
     @IBOutlet weak var btnPasse: UIButton!
     @IBOutlet weak var btnConfirmer: UIButton!
+    @IBOutlet weak var btnStopStartGame: UIButton!
     
     
     @IBOutlet weak var E1: UITextField!
@@ -44,6 +45,7 @@ class ViewController: UIViewController {
     @IBOutlet var periode: UITextField!
     
     var match = Match()
+    var gameMode = 1; //1 = start game; 2 = stop game
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,6 +63,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func startGame(sender: UIButton) {
+        
+        //start the game
+        if(gameMode == 1){
         match = Match()
         let team1Players:[UITextField] = [J1E1, J2E1, J3E1, J4E1, J5E1];
         let team1Numbers:[UITextField] = [N1E1, N2E1, N3E1, N4E1, N5E1];
@@ -68,16 +73,31 @@ class ViewController: UIViewController {
         let team2Numbers:[UITextField] = [N1E2, N2E2, N3E2, N4E2, N5E2];
         
         if(createGame(team1Players, teamNumbers: team1Numbers,team: 1) && createGame(team2Players, teamNumbers: team2Numbers,team : 2)){
-            stepper.enabled = true;
-            btnBut.enabled = true;
-            btnPasse.enabled = true;
-            btnConfirmer.enabled = true;
+            disEnaInputs();
 
         }else{
             let alert = UIAlertController(title: "Erreur", message: "Vous devez remplir tous les champs!", preferredStyle: UIAlertControllerStyle.Alert);
             alert.addAction(UIAlertAction(title: "Fermer", style: UIAlertActionStyle.Default, handler: nil));
             self.presentViewController(alert, animated: true, completion: nil);
         }
+        }else{ //end game
+            
+        }
+    }
+    
+    func disEnaInputs(){
+        let disableField:[UITextField] = [J1E1, J2E1, J3E1, J4E1, J5E1, N1E1, N2E1, N3E1, N4E1, N5E1,J1E2, J2E2, J3E2, J4E2, J5E2,N1E2, N2E2, N3E2, N4E2, N5E2, E1, E2];
+        
+        for input in disableField {
+            input.enabled = false;
+        }
+        
+        stepper.enabled = true;
+        btnBut.enabled = true;
+        btnPasse.enabled = true;
+        btnConfirmer.enabled = true;
+        
+        btnStopStartGame.setTitle("Terminer la partie", forState: UIControlState.Normal);
     }
     
     func createGame(teamPlayers:[UITextField], teamNumbers:[UITextField], team : Int) -> Bool {
