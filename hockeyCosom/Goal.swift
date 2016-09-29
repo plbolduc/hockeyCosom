@@ -12,6 +12,7 @@ class Goal{
     var Scrorer :Joueur;
      var Assit_1 :Joueur;
      var Assit_2 :Joueur;
+    var Time: String;
     init(scrorer : Joueur,assit_1 : Joueur,assit_2 : Joueur){
         self.Scrorer = scrorer;
         self.Assit_1 = assit_1;
