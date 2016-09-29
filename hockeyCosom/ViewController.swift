@@ -51,7 +51,7 @@ class ViewController: UIViewController {
     
     
     var gameTimeMode = false; //true = time is running  false = time is not runningß
-   
+    @IBOutlet weak var GameTimerTimeText: UILabel!
     @IBOutlet weak var timerOnOffText: UIButton!
     @IBAction func TimerOnOffEvent(sender: UIButton) {
   
@@ -65,19 +65,105 @@ class ViewController: UIViewController {
         
     }
 
+    
+    @IBOutlet weak var L1E1: UILabel!
+    @IBOutlet weak var L2E1: UILabel!
+    @IBOutlet weak var L3E1: UILabel!
+    @IBOutlet weak var L4E1: UILabel!
+    @IBOutlet weak var L5E1: UILabel!
+    
+    @IBOutlet weak var L1E2: UILabel!
+    @IBOutlet weak var L2E2: UILabel!
+    @IBOutlet weak var L3E2: UILabel!
+    @IBOutlet weak var L4E2: UILabel!
+    @IBOutlet weak var L5E2: UILabel!
+    
+    
     var match = Match()
     var gameMode = 1; //1 = start game; 2 = stop game
+    var selectedPlayerMode = 1; // 1 = but; 2 = passe
+    
+    var team1PlayersLabel:[UILabel] = [];
+    var team2PlayersLabel:[UILabel] = [];
+    
+    var butCourant:[UILabel] = [];
+    var passeCourantes:[UILabel] = [];
+
     
     override func viewDidLoad() {
+        
+        E1.text = "Equipe1";
+        E2.text = "Equipe2";
+        team1PlayersLabel = [L1E1,L2E1,L3E1,L4E1,L5E1];
+        team2PlayersLabel = [L1E2,L2E2,L3E2,L4E2,L5E2];
+        
         super.viewDidLoad()
         stepper.maximumValue = 3
         stepper.minimumValue = 1
+        
+        for input in team1PlayersLabel {
+            let eventClick = UITapGestureRecognizer(target: self, action: #selector(ViewController.selectPlayers))
+            input.addGestureRecognizer(eventClick);
+        }
+        for input in team2PlayersLabel {
+            let eventClick = UITapGestureRecognizer(target: self, action: #selector(ViewController.selectPlayers))
+            input.addGestureRecognizer(eventClick);
+        }
+ 
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func selectPlayers(sender:UITapGestureRecognizer) {
+        let labelplayer:UILabel = (sender.view as! UILabel) // Type cast it with the class for which you have added gesture
+
+        if(selectedPlayerMode == 1){
+            if(butCourant.count == 0){
+                butCourant.append(labelplayer);
+                labelplayer.backgroundColor =  UIColor(red: 5/255, green: 153/255, blue: 56/255, alpha: 1.0);
+            }else{
+                let alert = UIAlertController(title: "Nombre de but", message: "La limite de 1 but est atteint", preferredStyle: UIAlertControllerStyle.Alert);
+                alert.addAction(UIAlertAction(title: "Fermer", style: UIAlertActionStyle.Default, handler: nil));
+                self.presentViewController(alert, animated: true, completion: nil);
+            }
+        }else if(selectedPlayerMode == 2){
+            if(passeCourantes.count <= 1){
+                passeCourantes.append(labelplayer)
+                labelplayer.backgroundColor =  UIColor(red: 197/255, green: 0/255, blue: 0/255, alpha: 1.0);
+            }else{
+                let alert = UIAlertController(title: "Nombre de passe", message: "La limite de 2 passes est atteinte", preferredStyle: UIAlertControllerStyle.Alert);
+                alert.addAction(UIAlertAction(title: "Fermer", style: UIAlertActionStyle.Default, handler: nil));
+                self.presentViewController(alert, animated: true, completion: nil);
+            }
+        }
+
+       //(sender.view)?.tag
+    }
+    
+    func initalizePlayersLabels(playersLabel:[UILabel]){
+        
+        for input in playersLabel {
+            input.backgroundColor =  UIColor(red: 197/255, green: 0/255, blue: 0/255, alpha: 0);
+        }
+    }
+    
+    @IBAction func confirmerBut(sender: UIButton) {
+    }
+    
+    @IBAction func butClick(sender: UIButton) {
+        initalizePlayersLabels(butCourant);
+        butCourant.removeAll(keepCapacity: false);
+        selectedPlayerMode = 1;
+    }
+    @IBAction func passeClick(sender: UIButton) {
+        initalizePlayersLabels(passeCourantes);
+        passeCourantes.removeAll(keepCapacity: false);
+        selectedPlayerMode = 2;
+    }
+    
 
     @IBAction func changePeriode(sender: UIStepper) {
         self.periode.text = Int(sender.value).description
@@ -91,20 +177,21 @@ class ViewController: UIViewController {
         
         //start the game
         if(gameMode == 1){
-        match = Match()
-        let team1Players:[UITextField] = [J1E1, J2E1, J3E1, J4E1, J5E1];
-        let team1Numbers:[UITextField] = [N1E1, N2E1, N3E1, N4E1, N5E1];
-        let team2Players:[UITextField] = [J1E2, J2E2, J3E2, J4E2, J5E2];
-        let team2Numbers:[UITextField] = [N1E2, N2E2, N3E2, N4E2, N5E2];
-        
-        if(createGame(team1Players, teamNumbers: team1Numbers,team: 1) && createGame(team2Players, teamNumbers: team2Numbers,team : 2)){
-            disEnaInputs();
-
-        }else{
-            let alert = UIAlertController(title: "Erreur", message: "Vous devez remplir tous les champs!", preferredStyle: UIAlertControllerStyle.Alert);
-            alert.addAction(UIAlertAction(title: "Fermer", style: UIAlertActionStyle.Default, handler: nil));
-            self.presentViewController(alert, animated: true, completion: nil);
-        }
+            match = Match()
+            let team1Players:[UITextField] = [J1E1, J2E1, J3E1, J4E1, J5E1];
+            let team1Numbers:[UITextField] = [N1E1, N2E1, N3E1, N4E1, N5E1];
+            let team2Players:[UITextField] = [J1E2, J2E2, J3E2, J4E2, J5E2];
+            let team2Numbers:[UITextField] = [N1E2, N2E2, N3E2, N4E2, N5E2];
+            
+            if(createGame(team1Players, teamNumbers: team1Numbers,team: 1) && createGame(team2Players, teamNumbers: team2Numbers,team : 2)){
+                disEnaInputs();
+                gameMode = 2;
+                
+            }else{
+                let alert = UIAlertController(title: "Erreur", message: "Vous devez remplir tous les champs!", preferredStyle: UIAlertControllerStyle.Alert);
+                alert.addAction(UIAlertAction(title: "Fermer", style: UIAlertActionStyle.Default, handler: nil));
+                self.presentViewController(alert, animated: true, completion: nil);
+            }
         }else{ //end game
             
         }
@@ -129,6 +216,8 @@ class ViewController: UIViewController {
         var validInputs = true;
         var indexJoueur = 0;
         for player in teamPlayers {
+            player.text = "Salut";
+            teamNumbers[indexJoueur].text = "45";
             if(!player.hasText() && !teamNumbers[indexJoueur].hasText()){
                 validInputs = false;
             }
@@ -136,7 +225,7 @@ class ViewController: UIViewController {
             if(validInputs)
             {
                 let teamNumber = Int(teamNumbers[indexJoueur].text!)
-                match.AddPlayer(player.text!, numeroJoueur : teamNumber!,equipe: team)
+                match.AddPlayer(player.text!, numeroJoueur : teamNumber!,numeroEquipe: team)
             }
             indexJoueur += 1;
         }
