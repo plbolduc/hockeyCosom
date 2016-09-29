@@ -9,6 +9,7 @@
 import Foundation
 
 class Goal{
-init()
-{}
+    
+    init(scrorer : Joueur,assit_1 : Joueur,assit_2 : Joueur){
+    }
 }
