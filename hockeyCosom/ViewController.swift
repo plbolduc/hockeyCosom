@@ -43,6 +43,23 @@ class ViewController: UIViewController {
 
     @IBOutlet var stepper: UIStepper!
     @IBOutlet var periode: UITextField!
+  
+    var gameTimerCounte = 0;
+    var gameTimeMode = false; //true = time is running  false = time is not runningß
+    @IBOutlet weak var GameTimerTimeText: UILabel!
+    @IBOutlet weak var timerOnOffText: UIButton!
+    @IBAction func TimerOnOffEvent(sender: UIButton) {
+  
+            if(self.gameTimeMode == true){
+                self.timerOnOffText.setTitle("Off", forState: .Normal);
+                self.gameTimeMode = false;
+            }else{
+                self.timerOnOffText.setTitle("On", forState: .Normal);
+                self.gameTimeMode = true;
+            }
+        
+    }
+
     
     @IBOutlet weak var L1E1: UILabel!
     @IBOutlet weak var L2E1: UILabel!
@@ -199,7 +216,7 @@ class ViewController: UIViewController {
             if(validInputs)
             {
                 let teamNumber = Int(teamNumbers[indexJoueur].text!)
-                match.AddPlayer(player.text!, numeroJoueur : teamNumber!,equipe: team)
+                match.AddPlayer(player.text!, numeroJoueur : teamNumber!,numeroEquipe: team)
             }
             indexJoueur += 1;
         }

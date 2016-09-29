@@ -10,28 +10,16 @@ import Foundation
 
 class Match{
 
-    var Equipe1 = [Joueur]();
-    var Equipe2 = [Joueur]();
-    
-    var Goals = [Goal]();
+    var Joueurs = [Joueur]();
     
     init ()
     {
         
     }
-    func AddGoal(scrorer : Joueur,assit_1 : Joueur,assit_2 : Joueur) {
-        
-    }
-    func AddPlayer(nomJoueur : String, numeroJoueur: Int,equipe: Int) {
-        let joueur:Joueur=Joueur(nom : nomJoueur, numero: numeroJoueur)
-        if(equipe==1)
-        {
-            Equipe1.append(joueur)
-        }
-        if(equipe==2)
-        {
-            Equipe2.append(joueur)
-        }
+
+    func AddPlayer(nomJoueur : String, numeroJoueur: Int,numeroEquipe: Int) {
+        let joueur:Joueur=Joueur(nom : nomJoueur, numero: numeroJoueur, numeroEquipe : numeroEquipe);
+        Joueurs.append(joueur);
     }
 }
 
