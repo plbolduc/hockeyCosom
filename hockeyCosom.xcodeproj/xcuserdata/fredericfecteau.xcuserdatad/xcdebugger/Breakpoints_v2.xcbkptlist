@@ -6,7 +6,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "hockeyCosom/ViewController.swift"
@@ -15,8 +15,55 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "71"
             endingLineNumber = "71"
-            landmarkName = "startGame(_:)"
-            landmarkType = "5">
+            landmarkName = "ViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "hockeyCosom.ViewController.L2E2.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UILabel&gt;"
+                  moduleName = "hockeyCosom"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fredericfecteau/Documents/XCode/hockeyCosom/hockeyCosom/ViewController.swift"
+                  timestampString = "496857548.148959"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "42">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "hockeyCosom.ViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; hockeyCosom.ViewController"
+                  moduleName = "hockeyCosom"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fredericfecteau/Documents/XCode/hockeyCosom/hockeyCosom/ViewController.swift"
+                  timestampString = "496857548.149107"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "2369">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "hockeyCosom.ViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;hockeyCosom.ViewController&gt;"
+                  moduleName = "hockeyCosom"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fredericfecteau/Documents/XCode/hockeyCosom/hockeyCosom/ViewController.swift"
+                  timestampString = "496857548.149246"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "2257">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

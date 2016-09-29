@@ -18,6 +18,7 @@ class Match{
     }
 
     func AddPlayer(nomJoueur : String, numeroJoueur: Int,numeroEquipe: Int) {
+        
         let joueur:Joueur=Joueur(nom : nomJoueur, numero: numeroJoueur, numeroEquipe : numeroEquipe);
         Joueurs.append(joueur);
     }
