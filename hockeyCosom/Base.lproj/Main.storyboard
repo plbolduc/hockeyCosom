@@ -342,8 +342,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m3y-Cf-2tm">
-                                <rect key="frame" x="545" y="56" width="90" height="30"/>
+                                <rect key="frame" x="536" y="56" width="90" height="30"/>
                                 <state key="normal" title="On"/>
+                                <connections>
+                                    <action selector="TimerOnOffEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mat-aR-P8N"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -352,6 +355,7 @@
                     <connections>
                         <outlet property="E1" destination="w9K-Rn-OI5" id="xT9-gP-XDO"/>
                         <outlet property="E2" destination="ql7-9D-reb" id="yoq-Qa-TjI"/>
+                        <outlet property="GameTimerTimeText" destination="Rlb-at-rtB" id="gIA-kT-7ii"/>
                         <outlet property="J1E1" destination="glc-mT-MvZ" id="aTs-7r-yat"/>
                         <outlet property="J1E2" destination="XfQ-Aa-1Dv" id="rqN-MX-bMy"/>
                         <outlet property="J2E1" destination="tz1-NC-VYU" id="wAc-XN-riz"/>
@@ -378,6 +382,7 @@
                         <outlet property="btnStopStartGame" destination="ixf-2S-Amw" id="xr1-eu-9no"/>
                         <outlet property="periode" destination="U19-FI-Jr1" id="px1-9t-An2"/>
                         <outlet property="stepper" destination="KFf-f6-vxd" id="Hto-YA-nYc"/>
+                        <outlet property="timerOnOffText" destination="m3y-Cf-2tm" id="gRI-hw-otH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
