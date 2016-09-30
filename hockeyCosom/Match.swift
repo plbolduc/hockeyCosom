@@ -17,9 +17,9 @@ class Match{
         
     }
 
-    func AddPlayer(nomJoueur : String, numeroJoueur: Int,numeroEquipe: Int) {
+    func AddPlayer(nomJoueur : String, numeroJoueur: Int,numeroEquipe: Int, id : Int) {
         
-        let joueur:Joueur=Joueur(nom : nomJoueur, numero: numeroJoueur, numeroEquipe : numeroEquipe);
+        let joueur:Joueur=Joueur(nom : nomJoueur, numero: numeroJoueur, numeroEquipe : numeroEquipe,id : id);
         Joueurs.append(joueur);
     }
 }

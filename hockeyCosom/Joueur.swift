@@ -9,21 +9,23 @@
 import Foundation
 
 class Joueur {
-    var id: Int;
-    var nom: String;
-    var numero: Int;
-    var numeroEquipe: Int;
-    var goals = [Int]();
+    
+    var Nom: String;
+    var Numero: Int;
+    var Id: Int;
+    var NumeroEquipe: Int;
+    var Goals = [Int]();
     var Assist = [Int]();
     var Assist_2 = [Int]();
     
-    init(nom: String, numero: Int,  numeroEquipe: Int){
-        self.nom = nom
-        self.numero = numero
-        self.numeroEquipe = numeroEquipe
+    init(nom: String, numero: Int,  numeroEquipe: Int, id: Int){
+        self.Nom = nom
+        self.Numero = numero
+        self.NumeroEquipe = numeroEquipe
+        self.Id = id
     }
     func AddGoal(goalNumber : Int){
-        self.goals.append(goalNumber);
+        self.Goals.append(goalNumber);
     }
     func AddAssist(assistNumber : Int){
         self.Assist.append(assistNumber);
@@ -33,15 +35,15 @@ class Joueur {
     }
     
     func GetTotalPoints() -> Int {
-        return goals.count + Assist.count + Assist_2.count;
+        return Goals.count + Assist.count + Assist_2.count;
     }
     
     func GetTotalGoals() -> Int {
-        return goals.count;
+        return Goals.count;
     }
 
     func GetTeam() -> Int {
-        return numeroEquipe;
+        return NumeroEquipe;
     }
     
 }

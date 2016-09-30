@@ -17,7 +17,7 @@ class Stars{
     
     private func GetStar_1(winningTeam : Int) -> Joueur
     {
-        var firstStar:Joueur=Joueur(nom : "", numero: 0, numeroEquipe : winningTeam);
+        var firstStar:Joueur=Joueur(nom : "", numero: 0, numeroEquipe : winningTeam,id : 0);
         var bestTotalPoints = 0;
         var bestTotalGoals = 0;
         for joueur in Joueurs
@@ -46,12 +46,12 @@ class Stars{
     
     private func GetStar_2(firstStar : Joueur) -> Joueur
     {
-        var secondStar:Joueur=Joueur(nom : "", numero: 0, numeroEquipe : 0);
+        var secondStar:Joueur=Joueur(nom : "", numero: 0, numeroEquipe : 0,id : 0);
         var bestTotalPoints = 0;
         var bestTotalGoals = 0;
         for joueur in Joueurs
         {
-            if(firstStar.numero != joueur.numero)
+            if(firstStar.Id != joueur.Id)
             {
                 if(bestTotalPoints < joueur.GetTotalPoints())
                 {
@@ -74,37 +74,41 @@ class Stars{
         return secondStar;
     }
     
-//    private func GetStars(winningTeam : Int) -> [Joueur]
-//    {
-//        let firstStar:Joueur = GetStar_1(winningTeam);
-//        let secondStar:Joueur = GetStar_2(firstStar);
-//        var thirdStar:Joueur=Joueur(nom : "", numero: 0, numeroEquipe : 0);
-//        var bestTotalPoints = 0;
-//        var bestTotalGoals = 0;
-//        for joueur in Joueurs
-//        {
-//            if(firstStar.numero != joueur.numero && secondStar.numero != joueur.numero)
-//            {
-//                if(bestTotalPoints < joueur.GetTotalPoints())
-//                {
-//                    secondStar = joueur;
-//                    bestTotalPoints = joueur.GetTotalPoints()
-//                    bestTotalGoals = joueur.GetTotalGoals()
-//                }
-//                else if(joueur.GetTotalPoints() == bestTotalPoints)
-//                {
-//                    if(joueur.GetTotalGoals() > bestTotalGoals)
-//                    {
-//                        secondStar = joueur;
-//                        bestTotalPoints = joueur.GetTotalPoints()
-//                        bestTotalGoals = joueur.GetTotalGoals()
-//                    }
-//                }
-//            }
-//            
-//        }
-//        return secondStar;
-//    }
+    internal func GetStars(winningTeam : Int) -> [Joueur]
+    {
+        let firstStar:Joueur = GetStar_1(winningTeam);
+        let secondStar:Joueur = GetStar_2(firstStar);
+        var thirdStar:Joueur=Joueur(nom : "", numero: 0, numeroEquipe : 0, id: 0);
+        var bestTotalPoints = 0;
+        var bestTotalGoals = 0;
+        for joueur in Joueurs
+        {
+            if(firstStar.Id != joueur.Id && secondStar.Id != joueur.Id)
+            {
+                if(bestTotalPoints < joueur.GetTotalPoints())
+                {
+                    thirdStar = joueur;
+                    bestTotalPoints = joueur.GetTotalPoints()
+                    bestTotalGoals = joueur.GetTotalGoals()
+                }
+                else if(joueur.GetTotalPoints() == bestTotalPoints)
+                {
+                    if(joueur.GetTotalGoals() > bestTotalGoals)
+                    {
+                        thirdStar = joueur;
+                        bestTotalPoints = joueur.GetTotalPoints()
+                        bestTotalGoals = joueur.GetTotalGoals()
+                    }
+                }
+            }
+            
+        }
+        var treeStars = [Joueur]();
+        treeStars.append(firstStar);
+        treeStars.append(secondStar);
+        treeStars.append(thirdStar);
+        return treeStars;
+    }
     
     
 }
