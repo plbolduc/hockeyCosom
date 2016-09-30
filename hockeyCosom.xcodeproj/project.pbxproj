@@ -14,6 +14,7 @@
 		17B5FF7E1D94150200A8213F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17B5FF7C1D94150200A8213F /* LaunchScreen.storyboard */; };
 		17B5FF891D94150200A8213F /* hockeyCosomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B5FF881D94150200A8213F /* hockeyCosomTests.swift */; };
 		17B5FF941D94150200A8213F /* hockeyCosomUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B5FF931D94150200A8213F /* hockeyCosomUITests.swift */; };
+		8709DB831D9EE5FD003E87E5 /* 9fc326-4d0dbc3767cf58c5ba2a89679a3de5af.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8709DB821D9EE5FD003E87E5 /* 9fc326-4d0dbc3767cf58c5ba2a89679a3de5af.jpg */; };
 		8716DCEF1D942B5B00A37F48 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8716DCEE1D942B5B00A37F48 /* Match.swift */; };
 		8716DCF11D942C6700A37F48 /* Joueur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8716DCF01D942C6700A37F48 /* Joueur.swift */; };
 		8789274E1D9D5B0300C10539 /* Stars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789274D1D9D5B0300C10539 /* Stars.swift */; };
@@ -50,6 +51,7 @@
 		17B5FF8F1D94150200A8213F /* hockeyCosomUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hockeyCosomUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		17B5FF931D94150200A8213F /* hockeyCosomUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hockeyCosomUITests.swift; sourceTree = "<group>"; };
 		17B5FF951D94150200A8213F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8709DB821D9EE5FD003E87E5 /* 9fc326-4d0dbc3767cf58c5ba2a89679a3de5af.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "9fc326-4d0dbc3767cf58c5ba2a89679a3de5af.jpg"; sourceTree = "<group>"; };
 		8716DCEE1D942B5B00A37F48 /* Match.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		8716DCF01D942C6700A37F48 /* Joueur.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Joueur.swift; sourceTree = "<group>"; };
 		8789274D1D9D5B0300C10539 /* Stars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stars.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 		17B5FF721D94150200A8213F /* hockeyCosom */ = {
 			isa = PBXGroup;
 			children = (
+				8709DB821D9EE5FD003E87E5 /* 9fc326-4d0dbc3767cf58c5ba2a89679a3de5af.jpg */,
 				8716DCF01D942C6700A37F48 /* Joueur.swift */,
 				8716DCEE1D942B5B00A37F48 /* Match.swift */,
 				17B5FF731D94150200A8213F /* AppDelegate.swift */,
@@ -238,6 +241,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8709DB831D9EE5FD003E87E5 /* 9fc326-4d0dbc3767cf58c5ba2a89679a3de5af.jpg in Resources */,
 				17B5FF7E1D94150200A8213F /* LaunchScreen.storyboard in Resources */,
 				17B5FF7B1D94150200A8213F /* Assets.xcassets in Resources */,
 				17B5FF791D94150200A8213F /* Main.storyboard in Resources */,
@@ -413,6 +417,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = hockeyCosom/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ets.hockeyCosom;
@@ -424,6 +429,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = hockeyCosom/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ets.hockeyCosom;

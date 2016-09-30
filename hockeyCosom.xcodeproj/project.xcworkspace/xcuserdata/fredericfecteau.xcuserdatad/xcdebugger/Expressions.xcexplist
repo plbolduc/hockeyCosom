@@ -3,14 +3,6 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "Match.AddPlayer(String, numeroJoueur : Int, equipe : Int) -&gt; ():Match.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "Equipe1">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "ViewController.startGame(UIButton) -&gt; ():ViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -24,7 +16,21 @@
             <PersistentString
                value = "team">
             </PersistentString>
+            <PersistentString
+               value = "match">
+            </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Match.AddPlayer(String, numeroJoueur : Int, equipe : Int) -&gt; ():Match.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Equipe1">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Match.AddPlayer(String, numeroJoueur : Int, numeroEquipe : Int, id : Int) -&gt; ():Match.swift">
       </ContextState>
    </ContextStates>
 </VariablesViewState>
