@@ -23,9 +23,9 @@ class Match{
         Joueurs.append(joueur);
     }
     
-    internal func GetStars() {
-        
-        
+    internal func GetStars(winningTeam : Int) ->  [Joueur]{
+        let stars : Stars=Stars(joueurs : self.Joueurs);
+        return stars.GetStars(winningTeam);
     }
     
     

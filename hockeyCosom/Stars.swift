@@ -11,8 +11,8 @@ import Foundation
 class Stars{
     private var Joueurs = [Joueur]();
     
-    init(Joueurs : [Joueur]){
-        self.Joueurs = Joueurs;
+    init(joueurs : [Joueur]){
+        self.Joueurs = joueurs;
     }
     
     private func GetStar_1(winningTeam : Int) -> Joueur
