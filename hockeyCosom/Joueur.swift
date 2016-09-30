@@ -9,34 +9,45 @@
 import Foundation
 
 class Joueur {
-    var nom: String;
-    var numero: Int;
-    var numeroEquipe: Int;
-    var goals = [Int]();
-    var Assist = [Int]();
-    var Assist_2 = [Int]();
     
-    init(nom: String, numero: Int,  numeroEquipe: Int){
-        self.nom = nom
-        self.numero = numero
-        self.numeroEquipe = numeroEquipe
+    private var Nom: String;
+    private var Numero: Int;
+    private var Id: Int;
+    private var NumeroEquipe: Int;
+    private var Goals = [Int]();
+    private var Assist = [Int]();
+    private var Assist_2 = [Int]();
+    
+    init(nom: String, numero: Int,  numeroEquipe: Int, id: Int){
+        self.Nom = nom
+        self.Numero = numero
+        self.NumeroEquipe = numeroEquipe
+        self.Id = id
     }
-    func AddGoal(goalNumber : Int){
-        self.goals.append(goalNumber);
+    internal func AddGoal(goalNumber : Int){
+        self.Goals.append(goalNumber);
     }
-    func AddAssist(assistNumber : Int){
+    internal func AddAssist(assistNumber : Int){
         self.Assist.append(assistNumber);
     }
-    func AddAssist_2(assistNumber : Int){
+    internal func AddAssist_2(assistNumber : Int){
         self.Assist_2.append(assistNumber);
     }
     
-    func GetTotalPoints() -> Int {
-        return goals.count + Assist.count + Assist_2.count;
+    internal func GetTotalPoints() -> Int {
+        return Goals.count + Assist.count + Assist_2.count;
+    }
+    
+    internal func GetTotalGoals() -> Int {
+        return Goals.count;
     }
 
-    func GetTeam() -> Int {
-        return numeroEquipe;
+    internal func GetTeam() -> Int {
+        return NumeroEquipe;
+    }
+    
+    internal func GetId() -> Int {
+        return Id;
     }
     
 }

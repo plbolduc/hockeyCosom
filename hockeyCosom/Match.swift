@@ -10,16 +10,24 @@ import Foundation
 
 class Match{
 
-    var Joueurs = [Joueur]();
+    private var Joueurs = [Joueur]();
     
     init ()
     {
         
     }
 
-    func AddPlayer(nomJoueur : String, numeroJoueur: Int,numeroEquipe: Int) {
-        let joueur:Joueur=Joueur(nom : nomJoueur, numero: numeroJoueur, numeroEquipe : numeroEquipe);
+    internal func AddPlayer(nomJoueur : String, numeroJoueur: Int,numeroEquipe: Int, id : Int) {
+        
+        let joueur:Joueur=Joueur(nom : nomJoueur, numero: numeroJoueur, numeroEquipe : numeroEquipe,id : id);
         Joueurs.append(joueur);
     }
+    
+    internal func GetStars(winningTeam : Int) ->  [Joueur]{
+        let stars : Stars=Stars(joueurs : self.Joueurs);
+        return stars.GetStars(winningTeam);
+    }
+    
+    
 }
 
