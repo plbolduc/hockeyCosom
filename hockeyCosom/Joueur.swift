@@ -9,6 +9,7 @@
 import Foundation
 
 class Joueur {
+    var id: Int;
     var nom: String;
     var numero: Int;
     var numeroEquipe: Int;
@@ -33,6 +34,10 @@ class Joueur {
     
     func GetTotalPoints() -> Int {
         return goals.count + Assist.count + Assist_2.count;
+    }
+    
+    func GetTotalGoals() -> Int {
+        return goals.count;
     }
 
     func GetTeam() -> Int {
