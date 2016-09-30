@@ -9,7 +9,7 @@
 import Foundation
 
 class Stars{
-    var Joueurs = [Joueur]();
+    private var Joueurs = [Joueur]();
     
     init(Joueurs : [Joueur]){
         self.Joueurs = Joueurs;
@@ -51,7 +51,7 @@ class Stars{
         var bestTotalGoals = 0;
         for joueur in Joueurs
         {
-            if(firstStar.Id != joueur.Id)
+            if(firstStar.GetId() != joueur.GetId())
             {
                 if(bestTotalPoints < joueur.GetTotalPoints())
                 {
@@ -83,7 +83,7 @@ class Stars{
         var bestTotalGoals = 0;
         for joueur in Joueurs
         {
-            if(firstStar.Id != joueur.Id && secondStar.Id != joueur.Id)
+            if(firstStar.GetId() != joueur.GetId() && secondStar.GetId() != joueur.GetId())
             {
                 if(bestTotalPoints < joueur.GetTotalPoints())
                 {
