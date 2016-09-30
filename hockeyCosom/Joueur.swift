@@ -50,5 +50,12 @@ class Joueur {
         return Id;
     }
     
+    internal func GetNumero() -> Int {
+        return Numero;
+    }
+    
+    internal func GetNom() -> String {
+        return Nom;
+    }
 }
 

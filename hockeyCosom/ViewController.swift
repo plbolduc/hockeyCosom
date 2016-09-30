@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var btnPasse: UIButton!
     @IBOutlet weak var btnConfirmer: UIButton!
     @IBOutlet weak var btnStopStartGame: UIButton!
+    @IBOutlet weak var E1P: UILabel!
+    @IBOutlet weak var E2P: UILabel!
     
     
     @IBOutlet weak var E1: UITextField!
@@ -219,18 +221,23 @@ class ViewController: UIViewController {
         }
         
         if(valid && idplayerbut != -1){
-            match.Joueurs[idplayerbut].AddGoal(butid);
+            match.GetJoeur(idplayerbut).AddGoal(butid);
             var passCount = 1;
             for idpasse in idplayerpasse{
                 
                 if(passCount == 1){
-                    match.Joueurs[idpasse].AddAssist(butid);
+                    match.GetJoeur(idpasse).AddAssist(butid);
                 }else{
-                    match.Joueurs[idpasse].AddAssist_2(butid);
+                    match.GetJoeur(idpasse).AddAssist_2(butid);
                 }
                 passCount += 1;
             }
             butid += 1;
+            
+            E1P.text = String(match.GetTeamGoals(1));
+            E2P.text = String(match.GetTeamGoals(2));
+            btnBut.sendActionsForControlEvents(UIControlEvents.TouchUpInside)
+            btnPasse.sendActionsForControlEvents(UIControlEvents.TouchUpInside)
         }else{
             let alert = UIAlertController(title: "But invalide", message: "Les joueurs doivent tous faire partie de la même équipe!", preferredStyle: UIAlertControllerStyle.Alert);
             alert.addAction(UIAlertAction(title: "Fermer", style: UIAlertActionStyle.Default, handler: nil));
@@ -280,7 +287,20 @@ class ViewController: UIViewController {
                 self.presentViewController(alert, animated: true, completion: nil);
             }
         }else{ //end game
+     
+            var joueursEtoiles = match.GetStars(match.GetWinningTeam());
             
+            var str : String = "";
+            var cpt = 1;
+            for joueur in joueursEtoiles{
+                
+                str += String(cpt) + " - #" + String(joueur.GetNumero()) + " " + joueur.GetNom()+" " + String(joueur.GetTotalPoints()) + "Pts \n";
+                cpt += 1;
+            }
+            
+            let alert = UIAlertController(title: "*Joueurs étoiles*", message: str, preferredStyle: UIAlertControllerStyle.Alert);
+            alert.addAction(UIAlertAction(title: "Fermer", style: UIAlertActionStyle.Default, handler: nil));
+            self.presentViewController(alert, animated: true, completion: nil);
         }
     }
     
@@ -302,9 +322,10 @@ class ViewController: UIViewController {
     func createGame(teamPlayers:[UITextField], teamNumbers:[UITextField], team : Int) -> Bool {
         var validInputs = true;
         var indexJoueur = 0;
+        var cpt = 1;
         for player in teamPlayers {
             player.text = "Salut";
-            teamNumbers[indexJoueur].text = "45";
+            teamNumbers[indexJoueur].text = String(cpt*team);
             if(!player.hasText() && !teamNumbers[indexJoueur].hasText()){
                 validInputs = false;
             }
@@ -312,9 +333,10 @@ class ViewController: UIViewController {
             if(validInputs)
             {
                 let teamNumber = Int(teamNumbers[indexJoueur].text!)
-                match.AddPlayer(player.text!, numeroJoueur : teamNumber!,numeroEquipe: team,id : indexJoueur)
+                match.AddPlayer(player.text!, numeroJoueur : teamNumber!,numeroEquipe: team,id : cpt)
             }
             indexJoueur += 1;
+            cpt += 1;
         }
         return validInputs
     }
