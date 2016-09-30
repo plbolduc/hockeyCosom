@@ -83,6 +83,9 @@ class ViewController: UIViewController {
     
     var butCourant:[UILabel] = [];
     var passeCourantes:[UILabel] = [];
+    
+    var butid = 0;
+    
 
     
     override func viewDidLoad() {
@@ -113,6 +116,10 @@ class ViewController: UIViewController {
     }
     
     func selectPlayers(sender:UITapGestureRecognizer) {
+        
+        if(gameMode == 1){
+            return;
+        }
         let labelplayer:UILabel = (sender.view as! UILabel) // Type cast it with the class for which you have added gesture
 
         if(selectedPlayerMode == 1){
@@ -146,6 +153,86 @@ class ViewController: UIViewController {
     }
     
     @IBAction func confirmerBut(sender: UIButton) {
+        
+        /*var butCourant:[UILabel] = [];
+        var passeCourantes:[UILabel] = [];
+        */
+        //let t = butCourant[0].valueForKey("teamid");
+        if(butCourant.count == 0){
+            let alert = UIAlertController(title: "But invalide", message: "Selectionner le joueur qui vient de faire le but!", preferredStyle: UIAlertControllerStyle.Alert);
+            alert.addAction(UIAlertAction(title: "Fermer", style: UIAlertActionStyle.Default, handler: nil));
+            self.presentViewController(alert, animated: true, completion: nil);
+
+            return;
+        }
+        var idplayer = -1;
+        
+        var idplayerbut = -1;
+        var idplayerpasse:[Int] = [];
+        
+        var valid = true;
+        
+        for input in team1PlayersLabel {
+            idplayer += 1;
+            if(butCourant[0] == input){
+                idplayerbut = idplayer;
+            }
+            
+            for input2 in passeCourantes{
+                
+                if(input2 == input){
+                    idplayerpasse.append(idplayer);
+                }
+            }
+        }
+        
+        if(idplayerpasse.count > 0 && idplayerbut == -1){
+            valid = false;
+        }
+        
+        for input in team2PlayersLabel {
+            idplayer += 1;
+            if(butCourant[0] == input && idplayerbut == -1){
+                idplayerbut = idplayer;
+            }else if(butCourant[0] == input){
+                valid = false;
+            }
+            
+            for input2 in passeCourantes{
+                if(input2 == input){
+                    for currplayer in idplayerpasse{
+                        if(currplayer <= 4){
+                            valid = false;
+                        }
+                    }
+                    if(idplayerbut <= 4){
+                        valid = false;
+                    }
+                    idplayerpasse.append(idplayer);
+                }
+            }
+        }
+        
+        if(valid && idplayerbut != -1){
+            match.Joueurs[idplayerbut].AddGoal(butid);
+            var passCount = 1;
+            for idpasse in idplayerpasse{
+                
+                if(passCount == 1){
+                    match.Joueurs[idpasse].AddAssist(butid);
+                }else{
+                    match.Joueurs[idpasse].AddAssist_2(butid);
+                }
+                passCount += 1;
+            }
+            butid += 1;
+        }else{
+            let alert = UIAlertController(title: "But invalide", message: "Les joueurs doivent tous faire partie de la même équipe!", preferredStyle: UIAlertControllerStyle.Alert);
+            alert.addAction(UIAlertAction(title: "Fermer", style: UIAlertActionStyle.Default, handler: nil));
+            self.presentViewController(alert, animated: true, completion: nil);
+        }
+
+        
     }
     
     @IBAction func butClick(sender: UIButton) {
