@@ -28,6 +28,40 @@ class Match{
         return stars.GetStars(winningTeam);
     }
     
+    internal func GetJoeur(idJoueur : Int) ->  Joueur{
+        return Joueurs[idJoueur];
+    }
+    
+    internal func GetWinningTeam() ->  Int{
+        var sum1 = GetTeamGoals(1);
+        var sum2 = GetTeamGoals(2);
+        
+        if(sum1 > sum2){
+            return 1;
+        }else{
+            return 2;
+        }
+        
+    }
+    
+    internal func GetTeamGoals(teamId : Int) ->  Int{
+        
+        var sum = 0;
+        var cpt = -1;
+        for joueur in Joueurs{
+            
+            
+            if(teamId == 1 && cpt <= 4){
+                sum += joueur.GetTotalGoals()
+            }else if(teamId == 2 && cpt >= 5){
+                sum += joueur.GetTotalGoals()
+            }
+            cpt += 1;
+            
+        }
+        return sum;
+    }
+
     
 }
 
