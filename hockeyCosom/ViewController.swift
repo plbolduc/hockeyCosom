@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var E1: UITextField!
     @IBOutlet weak var E2: UITextField!
-
+    
     @IBOutlet weak var N1E1: UITextField!
     @IBOutlet weak var N2E1: UITextField!
     @IBOutlet weak var N3E1: UITextField!
@@ -42,31 +42,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var J3E2: UITextField!
     @IBOutlet weak var J4E2: UITextField!
     @IBOutlet weak var J5E2: UITextField!
-
+    
     @IBOutlet var stepper: UIStepper!
     @IBOutlet var periode: UITextField!
     
     @IBOutlet weak var actionGameText: UITextView!
     
-    let section = ["pizza","poutine"]
-    let item = [["Margarita","BBQ Chicken", "Pepperoni"],["frite","fromage"]]
-    
     
     var gameTimeMode = false; //true = time is running  false = time is not runningß
-    @IBOutlet weak var GameTimerTimeText: UILabel!
     @IBOutlet weak var timerOnOffText: UIButton!
-    @IBAction func TimerOnOffEvent(sender: UIButton) {
-  
-            if(self.gameTimeMode == true){
-                self.timerOnOffText.setTitle("Off", forState: .Normal);
-                self.gameTimeMode = false;
-            }else{
-                self.timerOnOffText.setTitle("On", forState: .Normal);
-                self.gameTimeMode = true;
-            }
-        
-    }
-
     
     @IBOutlet weak var L1E1: UILabel!
     @IBOutlet weak var L2E1: UILabel!
@@ -79,6 +63,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var L3E2: UILabel!
     @IBOutlet weak var L4E2: UILabel!
     @IBOutlet weak var L5E2: UILabel!
+    @IBOutlet weak var TimerPeriode: UILabel!
     
     
     var match = Match()
@@ -93,7 +78,7 @@ class ViewController: UIViewController {
     
     var butid = 0;
     
-
+    
     
     override func viewDidLoad() {
         
@@ -114,9 +99,20 @@ class ViewController: UIViewController {
             let eventClick = UITapGestureRecognizer(target: self, action: #selector(ViewController.selectPlayers))
             input.addGestureRecognizer(eventClick);
         }
- 
+        
     }
-
+    
+    @IBAction func TimerOnOffEvent(sender: UIButton) {
+        if(self.gameTimeMode == true){
+            self.timerOnOffText.setTitle("Stop", forState: .Normal);
+            self.gameTimeMode = false;
+        }else{
+            self.timerOnOffText.setTitle("Start", forState: .Normal);
+            self.gameTimeMode = true;
+        }
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -128,7 +124,7 @@ class ViewController: UIViewController {
             return;
         }
         let labelplayer:UILabel = (sender.view as! UILabel) // Type cast it with the class for which you have added gesture
-
+        
         if(selectedPlayerMode == 1){
             if(butCourant.count == 0){
                 butCourant.append(labelplayer);
@@ -140,6 +136,23 @@ class ViewController: UIViewController {
             }
         }else if(selectedPlayerMode == 2){
             if(passeCourantes.count <= 1){
+                for passeCourante in passeCourantes{
+                    if(passeCourante == labelplayer){
+                        let alert = UIAlertController(title: "Ajout invalide", message: "Cette personne est déjà selectionnée!", preferredStyle: UIAlertControllerStyle.Alert);
+                        alert.addAction(UIAlertAction(title: "Fermer", style: UIAlertActionStyle.Default, handler: nil));
+                        self.presentViewController(alert, animated: true, completion: nil);
+                        return;
+                    }
+                }
+                
+                if(butCourant.count != 0 && butCourant[0] == labelplayer){
+                    let alert = UIAlertController(title: "Ajout invalide", message: "Cette personne est déjà selectionnée!", preferredStyle: UIAlertControllerStyle.Alert);
+                    alert.addAction(UIAlertAction(title: "Fermer", style: UIAlertActionStyle.Default, handler: nil));
+                    self.presentViewController(alert, animated: true, completion: nil);
+                    return;
+                }
+                
+                
                 passeCourantes.append(labelplayer)
                 labelplayer.backgroundColor =  UIColor(red: 197/255, green: 0/255, blue: 0/255, alpha: 1.0);
             }else{
@@ -148,8 +161,8 @@ class ViewController: UIViewController {
                 self.presentViewController(alert, animated: true, completion: nil);
             }
         }
-
-       //(sender.view)?.tag
+        
+        //(sender.view)?.tag
     }
     
     func initalizePlayersLabels(playersLabel:[UILabel]){
@@ -162,20 +175,23 @@ class ViewController: UIViewController {
     @IBAction func confirmerBut(sender: UIButton) {
         
         /*var butCourant:[UILabel] = [];
-        var passeCourantes:[UILabel] = [];
-        */
+         var passeCourantes:[UILabel] = [];
+         */
         //let t = butCourant[0].valueForKey("teamid");
         if(butCourant.count == 0){
             let alert = UIAlertController(title: "But invalide", message: "Selectionner le joueur qui vient de faire le but!", preferredStyle: UIAlertControllerStyle.Alert);
             alert.addAction(UIAlertAction(title: "Fermer", style: UIAlertActionStyle.Default, handler: nil));
             self.presentViewController(alert, animated: true, completion: nil);
-
+            
             return;
         }
         var idplayer = -1;
         
         var idplayerbut = -1;
         var idplayerpasse:[Int] = [];
+        
+        var stringNomBut = "";
+        var stringNomPasse = "";
         
         var valid = true;
         
@@ -226,14 +242,25 @@ class ViewController: UIViewController {
             for idpasse in idplayerpasse{
                 
                 if(passCount == 1){
+                    stringNomPasse = " Assist : #"+String(match.GetJoeur(idpasse).GetNumero()) + " "+match.GetJoeur(idpasse).GetNom();
                     match.GetJoeur(idpasse).AddAssist(butid);
                 }else{
+                    stringNomPasse += ", #"+String(match.GetJoeur(idpasse).GetNumero()) + " "+match.GetJoeur(idpasse).GetNom();
                     match.GetJoeur(idpasse).AddAssist_2(butid);
                 }
                 passCount += 1;
             }
             butid += 1;
             
+            if(idplayerbut >= 5){
+                stringNomBut = E2.text!;
+            }else{
+                stringNomBut = E1.text!;
+            }
+            
+            stringNomBut += " Periode #" + periode.text! + " But : #" + String(match.GetJoeur(idplayerbut).GetNumero()) + " " + match.GetJoeur(idplayerbut).GetNom()
+            
+            actionGameText.text = actionGameText.text + stringNomBut + stringNomPasse + "\n"
             E1P.text = String(match.GetTeamGoals(1));
             E2P.text = String(match.GetTeamGoals(2));
             btnBut.sendActionsForControlEvents(UIControlEvents.TouchUpInside)
@@ -243,7 +270,7 @@ class ViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "Fermer", style: UIAlertActionStyle.Default, handler: nil));
             self.presentViewController(alert, animated: true, completion: nil);
         }
-
+        
         
     }
     
@@ -258,14 +285,12 @@ class ViewController: UIViewController {
         selectedPlayerMode = 2;
     }
     
-
+    
     @IBAction func changePeriode(sender: UIStepper) {
         self.periode.text = Int(sender.value).description
     }
     
-    @IBAction func fredTouch(sender: UIButton) {
-        //addActionGamePlay()
-    }
+    
     @IBOutlet weak var boutonFred: UIButton!
     @IBAction func startGame(sender: UIButton) {
         
@@ -287,7 +312,13 @@ class ViewController: UIViewController {
                 self.presentViewController(alert, animated: true, completion: nil);
             }
         }else{ //end game
-     
+            
+            if(match.GetTeamGoals(1) ==  match.GetTeamGoals(2)){
+                let alert = UIAlertController(title: "Match null", message: "Il est impossible de terminer un match null.", preferredStyle: UIAlertControllerStyle.Alert);
+                alert.addAction(UIAlertAction(title: "Fermer", style: UIAlertActionStyle.Default, handler: nil));
+                self.presentViewController(alert, animated: true, completion: nil);
+                return;
+            }
             var joueursEtoiles = match.GetStars(match.GetWinningTeam());
             
             var str : String = "";
@@ -342,8 +373,8 @@ class ViewController: UIViewController {
     }
     
     /*func addActionGamePlay(periode : Int, team : Int, buteur : String, passeurs : [String] ) {
-        print("TITI")
-        actionGameText.text = actionGameText.text + "But de " + team
-    }*/
+     print("TITI")
+     actionGameText.text = actionGameText.text + "But de " + team
+     }*/
 }
 

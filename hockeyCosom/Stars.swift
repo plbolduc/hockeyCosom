@@ -105,8 +105,14 @@ class Stars{
         }
         var treeStars = [Joueur]();
         treeStars.append(firstStar);
-        treeStars.append(secondStar);
-        treeStars.append(thirdStar);
+        if(secondStar.GetTotalPoints() != 0)
+        {
+            treeStars.append(secondStar);
+        }
+        if(thirdStar.GetTotalPoints() != 0)
+        {
+            treeStars.append(thirdStar);
+        }
         return treeStars;
     }
     

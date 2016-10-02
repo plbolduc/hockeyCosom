@@ -47,16 +47,11 @@ class Match{
     internal func GetTeamGoals(teamId : Int) ->  Int{
         
         var sum = 0;
-        var cpt = -1;
         for joueur in Joueurs{
             
-            
-            if(teamId == 1 && cpt <= 4){
-                sum += joueur.GetTotalGoals()
-            }else if(teamId == 2 && cpt >= 5){
+            if(teamId == joueur.GetTeam()){
                 sum += joueur.GetTotalGoals()
             }
-            cpt += 1;
             
         }
         return sum;
