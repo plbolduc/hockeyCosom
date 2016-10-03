@@ -343,13 +343,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Temps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ttv-51-VX5">
-                                <rect key="frame" x="485" y="49" width="71" height="21"/>
+                                <rect key="frame" x="480" y="28" width="71" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="10:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rlb-at-rtB">
-                                <rect key="frame" x="489" y="78" width="71" height="21"/>
+                                <rect key="frame" x="484" y="57" width="71" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="71" id="fs5-aQ-7Vc"/>
                                 </constraints>
@@ -358,7 +358,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m3y-Cf-2tm">
-                                <rect key="frame" x="470" y="97" width="90" height="30"/>
+                                <rect key="frame" x="465" y="76" width="90" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="trp-dG-g5x"/>
                                 </constraints>
@@ -388,7 +388,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" alpha="0.10000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x9B-L8-7P0">
-                                <rect key="frame" x="450" y="43" width="125" height="84"/>
+                                <rect key="frame" x="445" y="22" width="125" height="113"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
                         </subviews>

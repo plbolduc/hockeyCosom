@@ -49,8 +49,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var actionGameText: UITextView!
     
     
-    var gameTimeMode = false; //true = time is running  false = time is not runningß
-    @IBOutlet weak var timerOnOffText: UIButton!
+ 
     
     @IBOutlet weak var L1E1: UILabel!
     @IBOutlet weak var L2E1: UILabel!
@@ -63,7 +62,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var L3E2: UILabel!
     @IBOutlet weak var L4E2: UILabel!
     @IBOutlet weak var L5E2: UILabel!
-    @IBOutlet weak var TimerPeriode: UILabel!
+   
     
     
     var match = Match()
@@ -78,9 +77,18 @@ class ViewController: UIViewController {
     
     var butid = 0;
     
+    var gameTimeMode = false; //true = time is running  false = time is not runningß
+    @IBOutlet weak var timerOnOffText: UIButton!
+     @IBOutlet weak var TimerPeriode: UILabel!
     
-    
+    var timer = NSTimer();
+   
+    var minPerPeriode = 10;
+    var minuteCpt = 10;
+    var secondPerMin = 60;
+    var secondCpt = 0;
     override func viewDidLoad() {
+        
         
         E1.text = "Equipe1";
         E2.text = "Equipe2";
@@ -94,6 +102,8 @@ class ViewController: UIViewController {
         for input in team1PlayersLabel {
             let eventClick = UITapGestureRecognizer(target: self, action: #selector(ViewController.selectPlayers))
             input.addGestureRecognizer(eventClick);
+            
+           
         }
         for input in team2PlayersLabel {
             let eventClick = UITapGestureRecognizer(target: self, action: #selector(ViewController.selectPlayers))
@@ -106,10 +116,46 @@ class ViewController: UIViewController {
         if(self.gameTimeMode == true){
             self.timerOnOffText.setTitle("Stop", forState: .Normal);
             self.gameTimeMode = false;
+          
+            self.timer.invalidate();
+            self.timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: Selector("OnTimerTick"), userInfo: nil, repeats: true)
+            
         }else{
             self.timerOnOffText.setTitle("Start", forState: .Normal);
             self.gameTimeMode = true;
+            self.timer.invalidate();
         }
+        
+    }
+    func OnTimerTick() {
+        self.secondCpt -= 1;
+        
+        if(self.secondCpt <= 0 ){
+            self.secondCpt = self.secondPerMin - 1;
+            self.minuteCpt -= 1;
+        }
+        if(self.minuteCpt <= 0){
+            self.minuteCpt = self.minPerPeriode;
+            self.secondCpt = 0;
+            
+            self.timerOnOffText.setTitle("Start", forState: .Normal);
+            self.gameTimeMode = true;
+            self.timer.invalidate();
+            
+            let alert = UIAlertController(title: "End of periode", message: "End of periode" + String(self.periode.text), preferredStyle: UIAlertControllerStyle.Alert);
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil));
+            self.presentViewController(alert, animated: true, completion: nil);
+            
+        }
+        if(self.secondCpt < 10){
+            self.TimerPeriode.text = String(self.minuteCpt) + ":" + "0"+String(self.secondCpt);
+
+        }else{
+            self.TimerPeriode.text = String(self.minuteCpt) + ":" + String(self.secondCpt);
+
+        }
+        
+
         
     }
     
