@@ -397,6 +397,7 @@ class ViewController: UIViewController {
     }
     
     func createGame(teamPlayers:[UITextField], teamNumbers:[UITextField], team : Int) -> Bool {
+        
         var validInputs = true;
         var indexJoueur = 0;
         var cpt = 1;
@@ -409,8 +410,14 @@ class ViewController: UIViewController {
             
             if(validInputs)
             {
-                let teamNumber = Int(teamNumbers[indexJoueur].text!)
-                match.AddPlayer(player.text!, numeroJoueur : teamNumber!,numeroEquipe: team,id : cpt)
+                do {
+                    let teamNumber = Int(teamNumbers[indexJoueur].text!)
+                    match.AddPlayer(player.text!, numeroJoueur : teamNumber!,numeroEquipe: team,id : cpt)
+                } catch {
+                    validInputs = false;
+                    print("Something went wrong!")
+                }
+                
             }
             indexJoueur += 1;
             cpt += 1;
