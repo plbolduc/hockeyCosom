@@ -401,9 +401,9 @@ class ViewController: UIViewController {
         var indexJoueur = 0;
         var cpt = 1;
         for player in teamPlayers {
-            player.text = "Salut";
-            teamNumbers[indexJoueur].text = String(cpt*team);
-            if(!player.hasText() && !teamNumbers[indexJoueur].hasText()){
+            //player.text = "Salut";
+            //teamNumbers[indexJoueur].text = String(cpt*team);
+            if(!player.hasText() || !teamNumbers[indexJoueur].hasText()){
                 validInputs = false;
             }
             
