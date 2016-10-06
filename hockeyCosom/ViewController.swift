@@ -84,11 +84,11 @@ class ViewController: UIViewController {
     var timer = NSTimer();
    
     var minPerPeriode = 10;
-    var minuteCpt = 0;
+    var minuteCpt = 10;
     var secondPerMin = 60;
-    var secondCpt = 1;
+    var secondCpt = 0;
     override func viewDidLoad() {
-        
+        self.gameTimeMode = false;
         
         E1.text = "Equipe1";
         E2.text = "Equipe2";
@@ -113,16 +113,15 @@ class ViewController: UIViewController {
     }
     
     @IBAction func TimerOnOffEvent(sender: UIButton) {
-        if(self.gameTimeMode == true){
-            self.timerOnOffText.setTitle("Stop", forState: .Normal);
-            self.gameTimeMode = false;
-          
+        if(self.gameTimeMode == false){
+            self.timerOnOffText.setTitle("stop", forState: .Normal);
+            self.gameTimeMode = true;
             self.timer.invalidate();
-            self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("OnTimerTick"), userInfo: nil, repeats: true)
+            self.timer = NSTimer.scheduledTimerWithTimeInterval(0.05, target: self, selector: Selector("OnTimerTick"), userInfo: nil, repeats: true)
             
         }else{
-            self.timerOnOffText.setTitle("Start", forState: .Normal);
-            self.gameTimeMode = true;
+            self.timerOnOffText.setTitle("start", forState: .Normal);
+            self.gameTimeMode = false;
             self.timer.invalidate();
         }
         
@@ -130,16 +129,16 @@ class ViewController: UIViewController {
     func OnTimerTick() {
         self.secondCpt -= 1;
         
-        if(self.secondCpt <= 0 ){
+        if(self.secondCpt < 0 ){
             self.secondCpt = self.secondPerMin - 1;
             self.minuteCpt -= 1;
         }
-        if(self.minuteCpt <= 0){
+        if(self.minuteCpt < 0){
             self.minuteCpt = self.minPerPeriode;
             self.secondCpt = 0;
             
             self.timerOnOffText.setTitle("Start", forState: .Normal);
-            self.gameTimeMode = true;
+            self.gameTimeMode = false;
             self.timer.invalidate();
             
             let alert = UIAlertController(title: "End of periode", message: "End of periode" + String(self.periode.text), preferredStyle: UIAlertControllerStyle.Alert);
