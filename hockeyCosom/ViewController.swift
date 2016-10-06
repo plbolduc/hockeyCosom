@@ -84,9 +84,9 @@ class ViewController: UIViewController {
     var timer = NSTimer();
    
     var minPerPeriode = 10;
-    var minuteCpt = 10;
+    var minuteCpt = 0;
     var secondPerMin = 60;
-    var secondCpt = 0;
+    var secondCpt = 1;
     override func viewDidLoad() {
         
         
@@ -118,7 +118,7 @@ class ViewController: UIViewController {
             self.gameTimeMode = false;
           
             self.timer.invalidate();
-            self.timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: Selector("OnTimerTick"), userInfo: nil, repeats: true)
+            self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("OnTimerTick"), userInfo: nil, repeats: true)
             
         }else{
             self.timerOnOffText.setTitle("Start", forState: .Normal);
